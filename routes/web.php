@@ -109,4 +109,4 @@ Route::prefix('administrator')->middleware(['auth', 'role:administrator'])->grou
     Route::get('/administrator/penginapan/{penginapan}/edit', [PenginapanController::class,'edit'])->name('penginapan.edit');
     
     // });
-    
+// a
