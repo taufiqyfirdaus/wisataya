@@ -106,6 +106,6 @@ Route::get('/penginapan/{penginapan}', [PenginapanController::class, 'show'])->n
 Route::put('/administrator/penginapan/{penginapan}/edit', [PenginapanController::class, 'update'])->name('penginapan.update');
 Route::delete('administrator/penginapan/{penginapan}/delete', [PenginapanController::class, 'destroy'])->name('penginapan.destroy');
 Route::get('/administrator/penginapan/{penginapan}/edit', [PenginapanController::class, 'edit'])->name('penginapan.edit');
-    // tes
+
     // });
 // ab
