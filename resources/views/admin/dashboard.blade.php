@@ -1,4 +1,5 @@
 @extends('template.admin.default')
+<input type="hidden">
 @section('title')
     <h1><i class="fa fa-dashboard"></i>   Administrator</h1>
     <p>Halaman Administrator Wisataya</p>
