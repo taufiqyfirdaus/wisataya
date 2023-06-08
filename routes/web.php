@@ -107,5 +107,6 @@ Route::put('/administrator/penginapan/{penginapan}/edit', [PenginapanController:
 Route::delete('administrator/penginapan/{penginapan}/delete', [PenginapanController::class, 'destroy'])->name('penginapan.destroy');
 Route::get('/administrator/penginapan/{penginapan}/edit', [PenginapanController::class, 'edit'])->name('penginapan.edit');
     // tes
+    // tes doni
     // });
 // ab
