@@ -5,7 +5,7 @@
         <div class="container" style="margin-top: 80px;">
             <img src="/wisataya/public/images/Wisataya1.svg" width="300" style="margin-bottom: 3px">
             <p class="lead" style="color: rgb(255, 255, 255)">
-                Destinasi Wisata di Indonesia.
+                Kebudayaan di Indonesia.
             </p>
         </div>
     </section>
@@ -26,7 +26,7 @@
         </div>
         @if ($budayas->isEmpty())
             <div class="col-md-12">
-                <div class="jumbotron jumbotron-fluid">
+                <div class="jumbotron jumbotron-fluid" style="margin-top:10px; background-image: none; background-color: #fff">
                     <div class="container">
                         <h1 class="display-4">Data Tidak ada</h1>
                         <p class="lead">Silahkan Kembali ke Halaman Home.</p>

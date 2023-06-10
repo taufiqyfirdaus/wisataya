@@ -19,6 +19,10 @@ class Content extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function penginapans()
+    {
+        return $this->hasMany(Penginapan::class);
+    }
 
     public function getThumbnail()
     {

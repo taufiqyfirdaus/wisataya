@@ -1,10 +1,10 @@
 @extends('template.frontend.default')
 @section('content')
 <main role="main" class="main">
-    <section class="jumbotron text-center mb-4 bg-light">
-        <div class="container">
-            <h1>{{ config('app.name')}}</h1>
-            <p class="lead text-muted">
+    <section class="jumbotron text-center mb-5 bg-light ">
+        <div class="container" style="margin-top: 80px;">
+            <img src="/wisataya/public/images/Wisataya1.svg" width="300" style="margin-bottom: 3px">
+            <p class="lead" style="color: rgb(255, 255, 255)">
                 Destinasi Wisata di Provinsi {{$province->name}}.
             </p>
         </div>
@@ -24,6 +24,16 @@
                 </nav>
             </div>
         </div>
+        @if ($contents->isEmpty())
+            <div class="col-md-12">
+                <div class="jumbotron jumbotron-fluid" style="margin-top:10px; background-image: none; background-color: #fff">
+                    <div class="container">
+                        <h1 class="display-4">Data Tidak ada</h1>
+                        <p class="lead">Silahkan Kembali ke Halaman Home.</p>
+                    </div> 
+                </div>
+            </div>
+        @endif
         <div class="row">
             @foreach ($contents as $content)
                 <div class="col-md-4">

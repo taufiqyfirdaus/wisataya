@@ -15,7 +15,14 @@
                         </ol>
                     </nav>
                     <div class="float-right mt-3">
-                        <a href="{{ route('showPenginapan')}}" class="btn btn-info pr-4 pl-4" style="float:right; color:white;"> Penginapan</a>
+                        
+                        <a href="{{ route('showPenginapan', [
+                            $content->city->province->slug,
+                            $content->city->slug,
+                            $content->slug,
+                            $content->penginapan
+                        ]) }}" class="btn btn-info pr-4 pl-4" style="float:right; color:white;">Penginapan</a>
+                        
                     </div>
                     <h1>{{$content->title}}</h1>
                     <h6 class="text-muted">{{ $content->created_at->diffForHumans()}} By {{$content->user->name}}</h6>

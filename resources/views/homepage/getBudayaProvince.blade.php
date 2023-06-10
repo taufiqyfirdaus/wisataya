@@ -24,6 +24,16 @@
                 </nav>
             </div>
         </div>
+        @if ($budayas->isEmpty())
+            <div class="col-md-12">
+                <div class="jumbotron jumbotron-fluid" style="margin-top:10px; background-image: none; background-color: #fff">
+                    <div class="container">
+                        <h1 class="display-4">Data Tidak ada</h1>
+                        <p class="lead">Silahkan Kembali ke Halaman Home.</p>
+                    </div> 
+                </div>
+            </div>
+        @endif
         <div class="row">
             @foreach ($budayas as $budaya)
                 <div class="col-md-4">
