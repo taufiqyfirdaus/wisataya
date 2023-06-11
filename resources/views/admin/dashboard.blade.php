@@ -136,6 +136,41 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-12">
+            <div class="tile">
+                <h3 class="tile-title">Data Penginapan oleh User</h3>
+                <div class="tile-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <th>Nomor</th>
+                                <th>Nama</th>
+                                <th>Penginapan</th>
+                                <th>Published</th>
+                                <th>Not Published</th>
+                            </thead>
+                            <tbody>
+                                @php
+                                    $no=0;
+                                @endphp
+                                @foreach ($users as $user)
+                                @php
+                                    $no++;
+                                @endphp
+                                    <tr>
+                                        <td>{{$no}}</td>
+                                        <td>{{$user->name}}</td>
+                                        <td>{{$getCountPenginapan->getCountPenginapan($user->id)}}</td>
+                                        <td>{{$getCountPenginapanPublish->getCountPenginapanPublish($user->id)}}</td>
+                                        <td>{{$getCountPenginapanNotPublish->getCountPenginapanNotPublish($user->id)}}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     @elseif(auth()->user()->hasRole('contributor'))
         <div class="col-md-3">
             <div class="widget-small info coloured-icon">
