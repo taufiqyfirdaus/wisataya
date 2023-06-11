@@ -1,10 +1,10 @@
 @extends('template.frontend.default')
 @section('content')
     <main role="main" class="main">
-        <section class="main jumbotron mb-0 bg-#124747"style="height: 700px;">
+        <section class="main jumbotron mb-0 bg-#124747"style="height: 650px; background-image:none;">
             <div class="container">
                 <h1 class="judul">Order Details</h1>
-            </div>
+            
             <form action="{{ route('store')}}" method="post">
                 @csrf
                 <div class="form-group">
@@ -43,6 +43,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Order</button>
             </form>
+        </div>
         </section>
     </main>
     <script>

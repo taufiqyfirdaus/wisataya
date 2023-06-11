@@ -34,8 +34,8 @@
             yang beragam juga memengaruhi kehidupan sehari-hari dan 
             perayaan tradisional. Seni, tari tradisional, dan kerajinan 
             tangan merupakan bagian penting dari kebudayaan Indonesia.</p>
-            <img src="/wisataya_pjk/public/images/indonesia-transformed.png" width="350" style="margin-bottom: 3px; margin-left: auto; margin-right: auto; display:block; margin-bottom: 30px">
-            <img src="/wisataya_pjk/public/images/panah.svg" width="40" style="margin-bottom: 3px; margin-left: auto; margin-right: auto; display:block; margin-bottom: 50px">
+            <img src="images/indonesia-transformed.png" width="350" style="margin-bottom: 3px; margin-left: auto; margin-right: auto; display:block; margin-bottom: 30px">
+            <img src="images/panah.svg" width="40" style="margin-bottom: 3px; margin-left: auto; margin-right: auto; display:block; margin-bottom: 50px">
     </div>
     {{-- wisata --}}
     <div class="container">

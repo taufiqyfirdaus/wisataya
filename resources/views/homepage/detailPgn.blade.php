@@ -52,13 +52,15 @@
                         <div class="card-header">
                             Info
                         </div>
-                        <ul>
-                            <br><br>
-                            <h6 class="text-muted">Alamat</h6>
-                            {{$penginapan->alamat}}<br><br><br>
-                            <h6 class="text-muted">No. Telepon</h6>
-                            {{$penginapan->hp}}<br><br>
-                        </ul>
+                        <div class="card-body" style="background-color: #ffffff; color: black; padding-top: 0px">
+                            <ul>
+                                <br><br>
+                                <h6 class="text-muted">Alamat</h6>
+                                {{$penginapan->alamat}}<br><br><br>
+                                <h6 class="text-muted">No. Telepon</h6>
+                                {{$penginapan->hp}}<br><br>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
