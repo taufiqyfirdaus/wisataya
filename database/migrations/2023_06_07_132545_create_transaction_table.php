@@ -19,6 +19,16 @@ return new class extends Migration
             $table->date('checkout');
             $table->integer('harga');
             $table->timestamps();
+
+            $table->foreign('id_penginapan')
+            ->references('id')
+            ->on('penginapans')
+            ->onDelete('cascade');
+
+            $table->foreign('id_user')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
         });
     }
 

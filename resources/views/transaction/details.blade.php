@@ -1,18 +1,43 @@
 @extends('template.frontend.default')
 @section('content')
     <main role="main" class="main">
-        <section class="main jumbotron mb-0 bg-#124747"style="height: 650px; background-image:none;">
+        <section class="main jumbotron mb-0 bg-#124747"style="height: 710px; background-image:none;">
             <div class="container">
+                <div class="row" style="margin-top: -62px;">
+                    <div class="col-md-12 mt-5 mb-4">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb" style="padding: 20px; background-color: #185d5d;">
+                                <li class="breadcrumb-item"><a href="{{route('homepage')}}" 
+                                    class="text-decoration-none" style="color: #dcdcdc;">{{config('app.name')}}</a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="{{route('detailContent', [$content->city->province->slug, $content->city->slug,
+                                    $content])}}"
+                                    class="text-decoration-none" style="color: #dcdcdc;">{{$content->title}}</a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="{{route('showPenginapan', [$content->city->province->slug, $content->city->slug,
+                                    $content])}}" style="color: #dcdcdc;">Penginapan</a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="{{route('detailPenginapan', [$content->city->province->slug, $content->city->slug,
+                                    $content, $penginapan])}}" style="color: #dcdcdc;">{{$penginapan->name}}</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page" style="color: #bdbdbd;">
+                                    Transaction
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
                 <h1 class="judul">Order Details</h1>
             
-            <form action="{{ route('store')}}" method="post">
+            <form action="{{ route('store', [$province, $city, $content, $penginapan])}}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="inputAddress">Penginapan</label>
-                    <select type="text" class="form-control" id="selectPenginapan" name="id_penginapan">
+                    <input type="text" disabled class="form-control" id="selectpenginapan" name="id_penginapan" value="{{$penginapan->name}}">
+                    <select class="form-control" id="selectPenginapan" name="id_penginapan" style="display: none;">
                         <?php foreach ($data['penginapan'] as $key => $value) {
                     ?>
-                        <option value="<?= $value->id ?>" harga="<?= $value->harga ?>"><?= $value->name ?></option>
+                        <option value="<?= $penginapan->id ?>" harga="<?= $penginapan->harga ?>" ><?= $penginapan->name ?></option>
                         <?php }?>
                     </select>
                 </div>

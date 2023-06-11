@@ -46,7 +46,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{$budaya->title}}</h5>
                             <p class="card-text">{!! Str::words($budaya->content, 10) !!}</p>
-                            <a href="{{route('detailContent', [$budaya->city->province->slug, $budaya->city->slug,
+                            <a href="{{route('detailBudaya', [$budaya->city->province->slug, $budaya->city->slug,
                             $budaya])}}" class="btn btn-primary">Explore</a>
                         </div>
                     </div>

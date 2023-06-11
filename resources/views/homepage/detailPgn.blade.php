@@ -23,11 +23,12 @@
                     </nav>
                     <div class="float-right mt-3">
                         
-                        <a href="{{ route('showPenginapan', [
+                        <a href="{{ route('details', [
                             $content->city->province->slug,
                             $content->city->slug,
                             $content->slug,
-                            $content->penginapan
+                            $penginapan->slug,
+                            $penginapan->transaction
                         ]) }}" class="btn btn-success" style="float:right; color:white; padding-left: 40px; padding-right: 40px;">Pesan</a>
                         
                     </div>

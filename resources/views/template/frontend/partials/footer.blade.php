@@ -1,4 +1,4 @@
-<footer class="footer mt-auto py-5 bg-dark">
+<footer class="footer mt-auto py-5 bg-dark" style="height: 150px">
 
     <div class="container">
      <img src="/wisataya/public/images/Wisataya1.svg" width="200" style="margin-bottom: -30px">
