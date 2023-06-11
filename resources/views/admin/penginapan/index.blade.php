@@ -22,6 +22,7 @@
                   <th>Alamat</th>
                   <th>Deskripsi</th>
                   <th>No. Telp</th>
+                  <th>Harga</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
@@ -42,6 +43,7 @@
                     <td>{{ $penginapan->alamat }}</td>
                     <td>{!! Str::words($penginapan->deskripsi,10) !!}</td>
                     <td>{{ $penginapan->hp }}</td>
+                    <td>{{ $penginapan->harga }}</td>
                     <td>
                         @if ($penginapan->status_publish == 0)
                             <span class="badge badge-danger">Belum Publish</span>

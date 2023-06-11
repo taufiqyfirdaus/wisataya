@@ -63,6 +63,14 @@
             </div>
 
             <div class="form-group">
+                <label class="control-label">Harga per Malam</label>
+                <input class="form-control @error ('harga') is-invalid @enderror" name="harga" type="text" placeholder="Masukkan Harga per Malam" value="{{$penginapan->harga}}">
+                @error('harga')
+                    <p class="text-danger">{{$message}}</p>
+                @enderror
+            </div>
+
+            <div class="form-group">
                 <label class="control-label">Thumbnail</label>
                 <input class="form-control @error ('thumbnail') is-invalid @enderror" name="thumbnail" type="file">
                 @error('thumbnail')

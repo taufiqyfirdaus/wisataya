@@ -42,6 +42,7 @@ class PenginapanController extends Controller
             'alamat' => 'required',
             'deskripsi' => 'required',
             'hp' => 'required',
+            'harga' => 'required',
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg'
         ],
         [
@@ -50,6 +51,7 @@ class PenginapanController extends Controller
             'alamat.required' => 'Alamat Belum di Isi',
             'deskripsi.required' => 'Deskripsi Belum di Isi',
             'hp.required' => 'No.Telp Belum di Isi',
+            'harga.required' => 'Harga Belum di Isi',
             'thumbnail.required' => 'Thumbnail Belum di Isi',
             'thumbnail.image' => 'Format Thumbnail Tidak Valid',
         ]);
@@ -64,6 +66,7 @@ class PenginapanController extends Controller
             'alamat' => $request->alamat,
             'deskripsi' => $request->deskripsi,
             'hp' => $request->hp,
+            'harga' => $request->harga,
             'thumbnail' =>  $image,
         ]);
 
@@ -94,6 +97,7 @@ class PenginapanController extends Controller
             'alamat' => 'request',
             'deskripsi' => 'required',
             'hp' => 'request',
+            'harga' => 'request',
         ],
         [
             'content.not_in' => 'Wisata Belum Dipilih',
@@ -101,6 +105,7 @@ class PenginapanController extends Controller
             'alamat.required' => 'Alamat Belum di Isi',
             'deskripsi.required' => 'Deskripsi Belum di Isi',
             'hp.required' => 'No.Telp Belum di Isi',
+            'harga.required' => 'Harga Belum di Isi',
         ]);
 
         if ($request->hasFile('thumbnail')) {
@@ -130,6 +135,7 @@ class PenginapanController extends Controller
             'alamat' => $request->alamat,
             'deskripsi' => $request->deskripsi,
             'hp' => $request->hp,
+            'harga' => $request->harga,
             'thumbnail' =>  $image,
         ]);
 
