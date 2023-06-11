@@ -10,7 +10,7 @@
                                 class="text-decoration-none">{{config('app.name')}}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                {{$budaya->city->name}}
+                                {{$budaya->title}}
                             </li>
                         </ol>
                     </nav>

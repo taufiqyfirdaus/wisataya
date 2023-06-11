@@ -37,7 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/{province}/{city}/{content}/penginapan', [HomepageController::class, 'showPenginapan'])->name('showPenginapan');
     Route::get('/{province}/{city}/{content}', [HomepageController::class, 'detailContent'])->name('detailContent');
     Route::get('/budaya/{province}/{city}/{budaya}', [HomepageController::class, 'detailBudaya'])->name('detailBudaya');
-    Route::get('/penginapan/{content}/{penginapan}', [HomepageController::class, 'detailPenginapan'])->name('detailPenginapan');
+    Route::get('/{province}/{city}/{content}/{penginapan}', [HomepageController::class, 'detailPenginapan'])->name('detailPenginapan');
     Route::get('/province/{province}', [HomepageController::class, 'getContentProvince'])->name('getContentProvince');
     Route::get('/provinsi/{province}', [HomepageController::class, 'getBudayaProvince'])->name('getBudayaProvince');
     Route::get('/province', [HomepageController::class, 'getProvince'])->name('getProvince');

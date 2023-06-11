@@ -29,10 +29,9 @@ class HomepageController extends Controller
        return view('homepage.detail', compact('province','city','content','contents','provinces'));
         // dd($province->name);
     }
-    public function detailPenginapan(Content $content, Penginapan $penginapan)
+    public function detailPenginapan(Province $province, City $city, Content $content, Penginapan $penginapan)
     {
-        $contents = Content::where('status_publish', 1)->get()->random('5');
-       return view('homepage.detail', compact('province','city','content','contents','provinces', 'budayas', 'penginapans'));
+       return view('homepage.detailPgn', compact('province','city','content', 'penginapan'));
         // dd($province->name);
     }
 

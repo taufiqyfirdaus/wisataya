@@ -9,8 +9,15 @@
                             <li class="breadcrumb-item"><a href="{{route('homepage')}}" 
                                 class="text-decoration-none">{{config('app.name')}}</a>
                             </li>
+                            <li class="breadcrumb-item"><a href="{{route('detailContent', [$content->city->province->slug, $content->city->slug,
+                                $content])}}"
+                                class="text-decoration-none">{{$content->title}}</a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="{{route('showPenginapan', [$content->city->province->slug, $content->city->slug,
+                                $content])}}">Penginapan</a>
+                            </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                {{$content->title}}
+                                {{$penginapan->name}}
                             </li>
                         </ol>
                     </nav>
@@ -21,54 +28,36 @@
                             $content->city->slug,
                             $content->slug,
                             $content->penginapan
-                        ]) }}" class="btn btn-info pr-4 pl-4" style="float:right; color:white;">Penginapan</a>
+                        ]) }}" class="btn btn-success" style="float:right; color:white; padding-left: 40px; padding-right: 40px;">Pesan</a>
                         
                     </div>
-                    <h1>{{$content->title}}</h1>
-                    <h6 class="text-muted">{{ $content->created_at->diffForHumans()}} By {{$content->user->name}}</h6>
+                    <h1>{{$penginapan->name}}</h1>
+                    <h6 class="text-muted">{{ $penginapan->created_at->diffForHumans()}} By {{$penginapan->user->name}}</h6>
                     <span class="text-muted">{{$content->city->province->name}}, {{$content->city->name}}</span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-8">
                     <div class="picture mb-3">
-                        <img src="{{$content->getThumbnail()}}" alt="{{$content->title}}" class="img-fluid img-responsive">
+                        <img src="{{$penginapan->getThumbnail()}}" alt="{{$penginapan->name}}" class="img-fluid img-responsive">
                     </div>
                     <div class="article mb-5">
                         <span class="text-muted">
-                            {!! $content->content !!}
+                            {!! $penginapan->deskripsi !!}
                         </span>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
-                            Lainnya
+                            Info
                         </div>
-                        <ul class="list-group list-group-flush">
-                            @foreach ($contents as $item)
-                                <li class="list-group-item">
-                                    <a href="{{route('detailContent', [$item->city->province->slug, 
-                                    $item->city->slug, $item])}}" class="text-decoration-none">
-                                        {{$item->title}}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    <hr>
-                    <div class="card mb-5">
-                        <div class="card-header">
-                            Provinsi
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            @foreach ($provinces as $item)
-                                <li class="list-group-item">
-                                    <a href="{{route('getContentProvince', $item)}}" class="text-decoration-none">
-                                        {{$item->name}}
-                                    </a>
-                                </li>
-                            @endforeach
+                        <ul>
+                            <br><br>
+                            <h6 class="text-muted">Alamat</h6>
+                            {{$penginapan->alamat}}<br><br><br>
+                            <h6 class="text-muted">No. Telepon</h6>
+                            {{$penginapan->hp}}<br><br>
                         </ul>
                     </div>
                 </div>
