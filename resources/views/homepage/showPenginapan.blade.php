@@ -12,6 +12,34 @@
     {{-- budaya --}}
     <div class="container">
         <div class="row">
+            <div class="col-md-12 mt-5 mb-4">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-light" style="padding: 20px;">
+                        <li class="breadcrumb-item"><a href="{{route('homepage')}}" 
+                            class="text-decoration-none">{{config('app.name')}}</a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="{{route('detailContent', [$content->city->province->slug, $content->city->slug,
+                            $content])}}"
+                            class="text-decoration-none">{{$content->title}}</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Penginapan
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        @if ($penginapans->isEmpty())
+            <div class="col-md-12">
+                <div class="jumbotron jumbotron-fluid" style="margin-top:10px; background-image: none; background-color: #fff">
+                    <div class="container">
+                        <h1 class="display-4">Data Tidak ada</h1>
+                        <p class="lead">Silahkan Kembali ke Halaman Sebelumnya.</p>
+                    </div> 
+                </div>
+            </div>
+        @endif
+        <div class="row">
             @foreach ($penginapans as $penginapan)
                 <div class="col-md-4">
                     <div class="shadow card mb-4">
@@ -23,19 +51,14 @@
                         <div class="card-body">
                             <h5 class="card-title">{{$penginapan->name}}</h5>
                             <p class="card-text">{!! Str::words($penginapan->deskripsi, 10) !!}</p>
-                            <a href="{{route('detailPenginapan', [$penginapan->content->slug, $penginapan])}}" class="btn btn-primary">Explore</a>
+                            <a href="{{route('detailPenginapan', [$content->city->province->slug, $content->city->slug,
+                                $content, $penginapan])}}" class="btn btn-primary">Explore</a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-        <div class="row">
-            <div class="col-md-12 mb-5">
-                <div class="float-right">
-                    <a href="{{ route('otherBudaya')}}" class="btn btn-info" style="float:right; color:white;"> >>> Other Content</a>
-                </div>
-            </div>
-        </div>
+        {{$penginapans->render('pagination::bootstrap-5')}}
     </div>
 </main>
 @endsection

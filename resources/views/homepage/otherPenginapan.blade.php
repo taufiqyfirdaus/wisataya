@@ -5,7 +5,7 @@
         <div class="container" style="margin-top: 80px;">
             <img src="/wisataya/public/images/Wisataya1.svg" width="300" style="margin-bottom: 3px">
             <p class="lead" style="color: rgb(255, 255, 255)">
-                Budaya di Provinsi {{$province->name}}.
+                Penginapan.
             </p>
         </div>
     </section>
@@ -18,13 +18,13 @@
                             class="text-decoration-none">{{config('app.name')}}</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            {{$province->name}}
+                            Other Content
                         </li>
                     </ol>
                 </nav>
             </div>
         </div>
-        @if ($budayas->isEmpty())
+        @if ($penginapans->isEmpty())
             <div class="col-md-12">
                 <div class="jumbotron jumbotron-fluid" style="margin-top:10px; background-image: none; background-color: #fff">
                     <div class="container">
@@ -35,25 +35,24 @@
             </div>
         @endif
         <div class="row">
-            @foreach ($budayas as $budaya)
-                <div class="col-md-4">
-                    <div class="shadow card mb-4">
-                        <div class="d-flex flex-wrap">
-                            <img src="{{$budaya->getThumbnail()}}" alt="{{$budaya->title}}" 
-                            class="card-img-top">
-                            <h4 class="text-image position-absolute">{{$budaya->city->name}}</h4>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{$budaya->title}}</h5>
-                            <p class="card-text">{!! Str::words($budaya->content, 10) !!}</p>
-                            <a href="{{route('detailContent', [$budaya->city->province->slug, $budaya->city->slug,
-                            $budaya])}}" class="btn btn-primary">Explore</a>
-                        </div>
+            @foreach ($penginapans as $penginapan)
+            <div class="col-md-4">
+                <div class="shadow card mb-4">
+                    <div class="d-flex flex-wrap">
+                        <img src="{{$penginapan->getThumbnail()}}" alt="{{$penginapan->name}}" 
+                        class="card-img-top">
+                        <h4 class="text-image position-absolute">{{$penginapan->content->title}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{$penginapan->name}}</h5>
+                        <p class="card-text">{!! Str::words($penginapan->deskripsi, 10) !!}</p>
+                        <a href="{{route('detailPenginapan', [$penginapan->content->slug, $penginapan])}}" class="btn btn-primary">Explore</a>
                     </div>
                 </div>
-            @endforeach
+            </div>
+        @endforeach
         </div>
-        {{$budayas->render('pagination::bootstrap-5')}}
+        {{$penginapans->render('pagination::bootstrap-5')}}
     </div>
 </main>
 @endsection

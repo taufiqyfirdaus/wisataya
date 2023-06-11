@@ -18,23 +18,20 @@ class HomepageController extends Controller
         return view('homepage.index', compact('contents', 'budayas', 'penginapans'));
     }
 
-    public function showPenginapan(Content $content){
-        $penginapans = Penginapan::where('status_publish', 1)->latest()->limit(6)->get();
-        return view('homepage.showPenginapan', compact('content', 'penginapans'));
+    public function showPenginapan(Province $province, City $city, Content $content, Penginapan $penginapan){
+        $penginapans = $content->penginapans()->where('status_publish', 1)->paginate(12);
+        return view('homepage.showPenginapan', compact('content', 'penginapans', 'province', 'city', 'penginapan'));
     }
-    public function detailContent(Province $province, City $city, Content $content, Budaya $budaya, Penginapan $penginapan)
-    {
+    public function detailContent(Province $province, City $city, Content $content)
+    {   
         $contents = Content::where('status_publish', 1)->get()->random('5');
-        $budayas = Budaya::where('status_publish', 1)->get()->random('5');
-        $penginapans = Penginapan::where('status_publish', 1)->get()->random('1');
         $provinces = Province::get()->random('5');
-       return view('homepage.detail', compact('province','city','content','contents','provinces', 'budayas', 'penginapans'));
+       return view('homepage.detail', compact('province','city','content','contents','provinces'));
         // dd($province->name);
     }
-    public function detailPenginapan(Content $content, Penginapan $penginapan)
+    public function detailPenginapan(Province $province, City $city, Content $content, Penginapan $penginapan)
     {
-        $contents = Content::where('status_publish', 1)->get()->random('5');
-       return view('homepage.detail', compact('province','city','content','contents','provinces', 'budayas', 'penginapans'));
+       return view('homepage.detailPgn', compact('province','city','content', 'penginapan'));
         // dd($province->name);
     }
 
@@ -69,7 +66,8 @@ class HomepageController extends Controller
         $city = City::where('province_id', $province->id)->pluck('id');
         $contents = Content::where('status_publish', 1)->whereIn('city_id', $city)->paginate(12);
         $budayas = Budaya::where('status_publish', 1)->whereIn('city_id', $city)->paginate(12);
-        return view('homepage.getBudayaProvince', compact('contents','province', 'budayas'));
+        $penginapans = Penginapan::where('status_publish', 1)->whereIn('content_id', $content)->paginate(12);
+        return view('homepage.getBudayaProvince', compact('contents','province', 'budayas', 'penginapans', 'content'));
     }
 
     public function getProvince()
@@ -117,5 +115,11 @@ class HomepageController extends Controller
         $current_id = Budaya::where('status_publish', 1)->offset(0)->limit(6)->latest()->pluck('id');
         $budayas = Budaya::where('status_publish', 1)->latest()->whereNotIn('id', $current_id)->paginate(9);
         return view('homepage.otherBudaya', compact('budayas'));
+    }
+    public function otherPenginapan()
+    {
+        $current_id = Penginapan::where('status_publish', 1)->offset(0)->limit(6)->latest()->pluck('id');
+        $penginapans = Penginapan::where('status_publish', 1)->latest()->whereNotIn('id', $current_id)->paginate(9);
+        return view('homepage.otherPenginapan', compact('penginapans'));
     }
 }
