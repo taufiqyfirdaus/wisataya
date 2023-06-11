@@ -47,7 +47,7 @@
                         <div class="d-flex flex-wrap">
                             <img src="{{$content->getThumbnail()}}" alt="{{$content->title}}" 
                             class="card-img-top">
-                            <h4 class="text-image position-absolute">{{$content->city->name}}</h4>
+                            <h4 class="text-image position-absolute" style="padding-right: 10px; padding-left: 10px;">{{$content->city->name}}</h4>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{$content->title}}</h5>
@@ -77,7 +77,7 @@
                         <div class="d-flex flex-wrap">
                             <img src="{{$budaya->getThumbnail()}}" alt="{{$budaya->title}}" 
                             class="card-img-top">
-                            <h4 class="text-image position-absolute">{{$budaya->city->name}}</h4>
+                            <h4 class="text-image position-absolute" style="padding-right: 10px; padding-left: 10px;">{{$budaya->city->name}}</h4>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{$budaya->title}}</h5>
