@@ -36,7 +36,7 @@ Route::get('/penginapan/{content}/{penginapan}', [HomepageController::class, 'de
 Route::get('/province/{province}', [HomepageController::class, 'getContentProvince'])->name('getContentProvince');
 Route::get('/provinsi/{province}', [HomepageController::class, 'getBudayaProvince'])->name('getBudayaProvince');
 Route::get('/province', [HomepageController::class, 'getProvince'])->name('getProvince');
-Route::get('/provinsi', [HomepageController::class,'getProvinceBudaya'])->name('getProvinceBudaya');
+Route::get('/provinsi', [HomepageController::class, 'getProvinceBudaya'])->name('getProvinceBudaya');
 Route::get('/result', [HomepageController::class, 'result'])->name('result');
 Route::get('/transaction/{id}', [TransactionController::class, 'index'])->name('transaksi');
 Route::get('/transaction', [TransactionController::class, 'details'])->name('details');
