@@ -112,6 +112,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::put('/administrator/penginapan/{penginapan}/edit', [PenginapanController::class, 'update'])->name('penginapan.update');
         Route::delete('administrator/penginapan/{penginapan}/delete', [PenginapanController::class, 'destroy'])->name('penginapan.destroy');
         Route::get('/administrator/penginapan/{penginapan}/edit', [PenginapanController::class, 'edit'])->name('penginapan.edit');
+
+        Route::get('administrator/transaction', [TransactionController::class, 'tampil'])->name('transaction.tampil');
+        Route::delete('administrator/transaction/{transaction}/delete', [TransactionController::class, 'destroy'])->name('transaction.destroy');
     });
 
 Route::get('logout', [LoginController::class, 'logout']);

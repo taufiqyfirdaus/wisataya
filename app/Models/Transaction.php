@@ -12,7 +12,11 @@ class Transaction extends Model
 
     public function penginapan()
     {
-        return $this->belongsTo(Penginapan::class);
+        return $this->belongsTo(Penginapan::class, 'id_penginapan');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
     }
 
 }

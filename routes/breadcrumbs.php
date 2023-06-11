@@ -146,3 +146,8 @@ Breadcrumbs::for('Lihat Data Penginapan', function ($trail, $penginapan){
     $trail->push('Penginapan', route('penginapan.index'));
     $trail->push('Lihat Data', route('penginapan.show', $penginapan));
 });
+
+Breadcrumbs::for('Transaksi', function ($trail){
+    $trail->parent('dashboard');
+    $trail->push('Transaksi', route('transaction.tampil'));
+});

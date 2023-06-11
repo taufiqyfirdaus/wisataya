@@ -15,12 +15,14 @@
       <li><a class="app-menu__item" href="{{ route('content.index')}}"><i class="app-menu__icon fa fa-list"></i><span class="app-menu__label">Data Wisata</span></a></li>
       <li><a class="app-menu__item" href="{{ route('budaya.index')}}"><i class="app-menu__icon fa fa-list"></i><span class="app-menu__label">Data Budaya</span></a></li>
       <li><a class="app-menu__item" href="{{ route('penginapan.index')}}"><i class="app-menu__icon fa fa-hotel"></i><span class="app-menu__label">Data Penginapan</span></a></li>
+      <li><a class="app-menu__item" href="{{ route('transaction.tampil')}}"><i class="app-menu__icon fa fa-hotel"></i><span class="app-menu__label">Data Transaksi</span></a></li>
       <li><a class="app-menu__item" href="{{ route('user.index')}}"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">User</span></a></li>
     @elseif(auth()->user()->hasRole('contributor'))
       <li><a class="app-menu__item" href="{{ route('content.index')}}"><i class="app-menu__icon fa fa-list"></i><span class="app-menu__label">Data Wisata</span></a></li>
-      <li><a class="app-menu__item" href="{{ route('budaya.index')}}"><i class="app-menu__icon fa fa-list"></i><span class="app-menu__label">Data Budaya</span></a></li
+      <li><a class="app-menu__item" href="{{ route('budaya.index')}}"><i class="app-menu__icon fa fa-list"></i><span class="app-menu__label">Data Budaya</span></a></li>
     @elseif(auth()->user()->hasRole('innowner'))
       <li><a class="app-menu__item" href="{{ route('penginapan.index')}}"><i class="app-menu__icon fa fa-hotel"></i><span class="app-menu__label">Data Penginapan</span></a></li>
-    @endif
+      <li><a class="app-menu__item" href="{{ route('transaction.tampil')}}"><i class="app-menu__icon fa fa-hotel"></i><span class="app-menu__label">Data Transaksi</span></a></li>
+      @endif
   </ul>
 </aside>
