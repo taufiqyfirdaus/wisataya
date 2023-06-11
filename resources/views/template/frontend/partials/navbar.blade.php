@@ -10,10 +10,13 @@
             <a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('getProvince')}}">Pariwisata Indonesia</a>
+            <a class="nav-link" href="{{route('getProvince')}}">Pariwisata</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('getProvinceBudaya')}}">Budaya</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('logout')}}">Logout</a>
           </li>
         </ul>
         <form action="{{ route('result')}}" method="get" class="form-inline my-2 my-lg-0">

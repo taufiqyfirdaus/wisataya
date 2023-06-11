@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -26,7 +27,18 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/administrator';
+    // protected $redirectTo = '/administrator';
+    protected function authenticated(Request $request, $user)
+    {
+        $allowedRoles = ['administrator', 'contributor', 'innowner'];
+
+        if ($user->hasAnyRole($allowedRoles)) {
+            return redirect('/administrator');
+        } else {
+            return redirect('/');
+        }
+    }
+
 
     /**
      * Create a new controller instance.
