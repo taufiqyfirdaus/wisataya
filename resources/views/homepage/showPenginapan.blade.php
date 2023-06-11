@@ -46,7 +46,6 @@
                         <div class="d-flex flex-wrap">
                             <img src="{{$penginapan->getThumbnail()}}" alt="{{$penginapan->name}}" 
                             class="card-img-top">
-                            <h4 class="text-image position-absolute">{{$penginapan->content->title}}</h4>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{$penginapan->name}}</h5>
