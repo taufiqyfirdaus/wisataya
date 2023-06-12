@@ -12,7 +12,7 @@
     </section>
     <section class="jumbotron text-center mb-5" style="height: 400px; margin-top: 0px; background-image: none; background-color: #124747; ">
         <div class="container" style="max-width: 200px; float: left; display: flex;">
-            <img src="/wisataya_pjk/public/images/wst.png" style="margin-bottom: 3px; margin-left: 350px; margin-right: auto; display:block; margin-bottom: 30px; max-height: 300px;">
+            <img src="images/wst.png" style="margin-bottom: 3px; margin-left: 350px; margin-right: auto; display:block; margin-bottom: 30px; max-height: 300px;">
         </div>
         <div class="container" style="margin-top: px; float: right; max-width: 450px; margin-right: 300px;">
             <h1 class="judul1">Liburan tenang <br> dengan Wisataya</h1>

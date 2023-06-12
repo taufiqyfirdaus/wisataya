@@ -27,7 +27,7 @@
                         </nav>
                     </div>
                 </div>
-                <h1 class="judul">Order Details</h1>
+                <h1 class="judul">Transaction</h1>
             
             <form action="{{ route('store', [$province, $city, $content, $penginapan])}}" method="post">
                 @csrf

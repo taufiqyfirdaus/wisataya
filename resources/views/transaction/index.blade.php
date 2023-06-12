@@ -3,7 +3,7 @@
 <main role="main" class="main">
     <section class="main jumbotron mb-0 bg-#124747" style="height: 700px; background-image: none;">
         <div class="container">
-            <h1 class="judul">Transaction</h1>
+            <h1 class="judul">Order Details</h1>
             <div class="bingkai" style="background-color: #fff; height: 500px;padding: 1px;margin-top: 42px; border-radius: 20px">
                 <div class="tabel">
                     <table class="table table-striped">
