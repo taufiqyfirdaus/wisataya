@@ -195,7 +195,7 @@
                 <i class="icon fa fa-upload fa-3x"></i>
                 <div class="info">
                     <h4>Published</h4>
-                    <p><b>{{$userContentPublish}}</b></p>
+                    <p><b>{{$userContContentPublish}}</b></p>
                 </div>
             </div>
         </div>
@@ -204,7 +204,7 @@
                 <i class="icon fa fa-archive fa-3x"></i>
                 <div class="info">
                     <h4>Not Published</h4>
-                    <p><b>{{$userContentNotPublish}}</b></p>
+                    <p><b>{{$userContContentNotPublish}}</b></p>
                 </div>
             </div>
         </div>    
@@ -223,7 +223,7 @@
                 <i class="icon fa fa-upload fa-3x"></i>
                 <div class="info">
                     <h4>Published</h4>
-                    <p><b>{{$userContentPublish}}</b></p>
+                    <p><b>{{$userPenginapanPublish}}</b></p>
                 </div>
             </div>
         </div>
@@ -232,7 +232,7 @@
                 <i class="icon fa fa-archive fa-3x"></i>
                 <div class="info">
                     <h4>Not Published</h4>
-                    <p><b>{{$userContentNotPublish}}</b></p>
+                    <p><b>{{$userPenginapanNotPublish}}</b></p>
                 </div>
             </div>
         </div>    

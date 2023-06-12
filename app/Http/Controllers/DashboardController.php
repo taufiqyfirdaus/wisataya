@@ -53,6 +53,13 @@ class DashboardController extends Controller
         ->where('status_publish', 1)->count();
         $userBudayaNotPublish = Budaya::where('user_id', auth()->user()->id)
         ->where('status_publish', 0)->count();
+
+        $userContContentPublish = Content::where('user_id', auth()->user()->id)
+        ->where('status_publish', 1)->count()+Budaya::where('user_id', auth()->user()->id)
+        ->where('status_publish', 1)->count();
+        $userContContentNotPublish = Content::where('user_id', auth()->user()->id)
+        ->where('status_publish', 0)->count()+Budaya::where('user_id', auth()->user()->id)
+        ->where('status_publish', 0)->count();
         
         $userPenginapan = Penginapan::where('user_id', auth()->user()->id)->count();
         $userPenginapanPublish = Penginapan::where('user_id', auth()->user()->id)
@@ -64,6 +71,7 @@ class DashboardController extends Controller
         'getCountContentPublish', 'getCountContentNotPublish', 'userContent', 'userContentPublish', 
         'userContentNotPublish', 'getCountBudaya', 'getCountBudayaPublish', 'getCountBudayaNotPublish', 
         'userBudaya', 'userBudayaPublish', 'contentBudaya', 'getCountPenginapan', 'getCountPenginapanPublish', 'getCountPenginapanNotPublish', 
-        'userPenginapan', 'userPenginapanPublish', 'penginapan'));
+        'userPenginapan', 'userPenginapanPublish', 'userPenginapanNotPublish', 'penginapan', 'userContContentPublish', 
+        'userContContentNotPublish'));
     }
 }
