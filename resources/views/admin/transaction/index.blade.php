@@ -69,7 +69,7 @@
             var title = $(this).data('title')
 
             swal({
-                title : "Apakah Kamu Yakin Akan Menghapus Data Penginapan "+title+" ?",
+                title : "Apakah Kamu Yakin Akan Menghapus Data Transaksi "+title+" ?",
                 text : "Data Yang SUdah di Hapus Tidak Bisa Dikembalikan",
                 icon : "warning",
                 buttons : true,
